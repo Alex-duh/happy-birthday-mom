@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="margin-top:100px;">
+        <h1 id="resultMsg" style="font-size:2em; color:#d7263d;"></h1>
+        <p id="scoreMsg" style="font-size:1.2em;"></p>
+        <div style="margin-top:30px;">
+            <!-- Replace src with your image path -->
+            <img id="resultImg" src="images/result.png" alt="Result Image" style="width:320px; border-radius:30px;">
+        </div>
+        <button onclick="window.location.href='index.html'" style="margin-top:40px; background:#d7263d; color:#fff; border:none; border-radius:10px; padding:10px 30px; font-size:1em; cursor:pointer;">
+            Play Again
+        </button>
+    </div>
+    <script>
+        // Get URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const result = params.get('result');
+        const score = params.get('score');
+        document.getElementById('scoreMsg').textContent = `Score: ${score}`;
+        if(result === 'win') {
+            document.getElementById('resultMsg').textContent = "Good job! I love you! 💖";
+        } else {
+            document.getElementById('resultMsg').textContent = "Nice try, I still love you! 💖";
+        }
+        // You can change the image based on result if you want
+        // document.getElementById('resultImg').src = result === 'win' ? 'images/win.png' : 'images/lose.png';
+    </script>
+    <script src="confetti.js"></script>
+</body>
+</html>

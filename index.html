@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Catch the Hearts! Happy Birthday Mom!</title>
+    <title>Happy Birthday Mom!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Catch the Hearts!</h1>
-    <p>Catch as many hearts as you can in 20 seconds!</p>
-    <div id="gameContainer">
-        <canvas id="gameCanvas"></canvas>
-        <div id="slider"></div>
+    <div style="margin-top:100px;">
+        <h1 style="font-size:3em; color:#d7263d;">Happy Birthday Mom!</h1>
+        <p style="font-size:1.5em;">Wishing you the best day ever! 🎉💖</p>
+        <button id="playBtn" style="margin-top:40px; background:#d7263d; color:#fff; border:none; border-radius:10px; padding:15px 40px; font-size:1.5em; cursor:pointer;">
+            Play Game
+        </button>
+        <script>
+            document.getElementById('playBtn').onclick = function() {
+                window.location.href = "game.html";
+            };
+        </script>
     </div>
-    <div id="message"></div>
-    <button id="startBtn">Start Game</button>
-    <script src="confetti.js"></script>
-    <script src="game.js"></script>
 </body>
 </html>
